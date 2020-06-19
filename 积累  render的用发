@@ -1,0 +1,18 @@
+{
+      title: '备注',
+      dataIndex: 'comment',
+      key: 'comment',
+      // render: (comment,text) => {(comment ? comment : '无')}
+      render: (comment,text) => {
+        if(text.returnFlowState==='REFUND_FAILED'){
+          return text.refundFailedReason
+        }else{
+         return comment ? comment : '无'
+        }
+
+      }
+    },
+    
+    
+    如果再render里面用三元运算符的话，如果箭头右面的语句不加{}，用（）包裹的情况下不加return
+    如果箭头语句右面用{}包裹的话，需加上return
